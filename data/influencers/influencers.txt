@@ -2,4 +2,3 @@
 YahooFinance
 ReutersBiz
 BusinessInsider
-FinancialTimes
