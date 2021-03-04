@@ -9,5 +9,6 @@ guardian
 nytimes
 dwnews
 Forbes
+EconomicTimes
 
 
