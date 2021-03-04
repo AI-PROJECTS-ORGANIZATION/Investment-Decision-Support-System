@@ -1,5 +1,14 @@
-
 YahooFinance
 ReutersBiz
 BusinessInsider
-dule
+FinancialTimes
+Investopedia
+business
+CNBC
+guardian
+nytimes
+dwnews
+Forbes
+EconomicTimes
+
+
