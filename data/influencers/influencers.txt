@@ -79,3 +79,7 @@ ismh
 MichaelSteeber
 rjonesy
 SebastienPage
+tim_cook
+cue
+pschiller
+AppleNews
