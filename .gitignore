@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Collecting labeled (annotated) Twitter datasets (corpora) for supervised learning (lexicon, machine learning and neural networks approach)
+corpora/
