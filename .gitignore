@@ -130,3 +130,5 @@ dmypy.json
 
 # Raw data
 raw_data/
+# Corpora
+corpora/
