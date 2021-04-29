@@ -88,6 +88,8 @@ def data_wrangling_corpus1(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus1.csv')
     df.to_pickle('data\corpora\corpus1.pkl')
 
@@ -141,6 +143,8 @@ def data_wrangling_corpus2(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus2.csv')
     df.to_pickle('data\corpora\corpus2.pkl')
 
@@ -193,6 +197,8 @@ def data_wrangling_corpus3(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus3.csv')
     df.to_pickle('data\corpora\corpus3.pkl')
 
@@ -244,6 +250,8 @@ def data_wrangling_corpus4(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus4.csv')
     df.to_pickle('data\corpora\corpus4.pkl')
 
@@ -340,6 +348,8 @@ def data_wrangling_corpus5(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus5.csv')
     df.to_pickle('data\corpora\corpus5.pkl')
 
@@ -349,7 +359,7 @@ def data_wrangling_corpus6(path):
     for chunk in pd.read_csv(path, chunksize = 1000):
         chunk = chunk[['headline','sentimentClass']]
         chunk_list.append(chunk)
-    df = pd.concat(chunk_list)
+    df = pd.concat(chunk_list).reset_index(drop=True)
     # Only two necessary columns (text and sentiment).
     df.columns =['text', 'sentiment']
     print(df.head())
@@ -393,6 +403,8 @@ def data_wrangling_corpus6(path):
     print('The number of negative tweets in dataset:',negative)
     print('The number of neutral tweets in dataset:',neutral) 
     print('The number of positive tweets in dataset:',positive)
+    # Just to be sure that DataFrame index is reset and starts from 0.
+    df.reset_index(drop=True, inplace=True)
     df.to_csv('data\corpora\corpus6.csv')
     df.to_pickle('data\corpora\corpus6.pkl')
 
