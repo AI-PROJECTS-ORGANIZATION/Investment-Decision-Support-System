@@ -1,4 +1,8 @@
 first feature
 second feature
 third feature
+<<<<<<< HEAD
 fifth feature
+=======
+forth feature
+>>>>>>> b4ac14af097f57fdb367bd7d09fb4d312f30a973
