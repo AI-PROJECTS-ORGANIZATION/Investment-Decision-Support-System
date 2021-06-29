@@ -5,6 +5,8 @@ import os
 import glob
 
 # use your path
+# advisable to use os.path.join as this makes concatenation OS independent
+# To avoid the ambiguity and allow portability of your code you can use os.path.join
 PATH_STOCK_MARKET_DATA = r'data/raw_data/stock_market_data'
 PATH_USERNAMES = r'data/twint_search_parameters'
 PATH_TERMS = r'data/twint_search_parameters'
@@ -112,9 +114,8 @@ def aggregating_tweets_by_date():
     # advisable to use os.path.join as this makes concatenation OS independent                     
     all_files = glob.glob(os.path.join(PATH_UNLABELED_TWEETS_BY_USERNAMES, "*.csv"))     
     for filename in all_files:
-        print(filename)
+        print(f'Aggregating tweets by date from a file: \"{filename}\" in progress...')
         df = pd.read_csv(filename)
-        print(df.shape)
         df.sort_values(by='date', inplace=True)
         # You have tweets by users 
         # but you need tweets by date to create a temporal correlation with stock market data.
@@ -137,7 +138,10 @@ def aggregating_tweets_by_date():
                 temp.to_csv(os.path.join(PATH_UNLABELED_TWEETS_BY_DATES, f'{date}.csv'), mode='a', header=False)
             else:
                 temp.to_csv(os.path.join(PATH_UNLABELED_TWEETS_BY_DATES, f'{date}.csv'))
-    # Data sanitization.
+    # Preventing explosion of file size by reducing duplicates. 
+    # New tweets are being appended to an existing file. 
+    # In case the user runs the program multiple times same tweets are being appended over and over again. 
+    # To prevent this behavior data sanitization is conducted, and duplicate tweets are removed. 
     check_transformation()
 
 if __name__ == '__main__':
@@ -151,7 +155,8 @@ if __name__ == '__main__':
     usernames_path = os.path.join(PATH_USERNAMES, 'twitter_usernames.csv')
     terms_path = os.path.join(PATH_TERMS, 'twitter_search_terms.csv')
     #collecting_unlabeled_tweets_by_usernames(start_date,end_date,usernames_path,terms_path)
-    #aggregating_tweets_by_date()
+    aggregating_tweets_by_date()
+    print('Tweets after the data sanitization are being conducted:')
     check_transformation()
 
 
